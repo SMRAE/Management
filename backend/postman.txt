@@ -1,0 +1,35 @@
+//Customer 
+
+{   
+   "firstName": "Semere",
+   "lastName": "Yonashk",   
+    "email": "mununjf@gmmi.mbm",              
+    "address": "Edmonton",
+    "city": "Edmonton",
+    "country": "Canada",
+     "to": [{
+         "employer": "603d76f1272b142f3cbbcb7f",
+         "name": "knvkdnv",
+         "middleName": "kkcsc",
+         "city": "addis",
+         "country": "Ethio",
+         "employee": "603d76bc912819602c6b99e6"
+
+     }]
+}   
+
+//Order 
+
+{
+ "employer": "603d76bc912819602c6b99e6",
+    "amountHard": 100,
+    "rate": 23,
+    "amountLocal": 2300,
+    "fee": 5,
+    "employee": "603d76bc912819602c6b99e6",
+    "from": "604808897aa7c565f4b309e8",
+    "to": "604808897aa7c565f4b309e9"  
+}
+
+
+// Reciever 
