@@ -1,13 +1,34 @@
 import './App.css';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import LogIn from './components/LogIn';
+import jwtDecode from 'jwt-decode';
+//import NavBar from './components/NavBar'; 
+import AppBarDrawer from './components/AppBarDrawer';
 
 function App() {
-  return (
-    <BrowserRouter>
+
+  const [user, setUser] = useState({});
+
+  useEffect(() => {   
+    function getuser(){
+      try {
+        const jwt = localStorage.getItem('token');
+        const user = jwtDecode(jwt);       
+        setUser(user);          
+      } catch (error) {}
+    }
+    getuser();
+  }, [])
+
+  return (    
+    <BrowserRouter>   
     <div className="App">
       <Switch>
-        <Route path='/' component={LogIn} />
+        <Route path='/home' render={props =>
+            <AppBarDrawer user={ user } />
+         } />          
+        <Route path='/' component={LogIn} />         
       </Switch>
     </div>
     </BrowserRouter>

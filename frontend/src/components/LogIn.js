@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Notification from './Notification';
 import { Container, 
          Typography, 
          Box, 
@@ -56,16 +57,21 @@ export default function LogIn() {
   const classes = useStyles();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [notify, setNotify] = useState({ isOpen: false, message: '', type: '' })
 
   const login = async (email, password) => {
     try {
         const {data: jwt} = await axios.post('/user/login', { email, password });
         console.log(jwt);
         localStorage.setItem('token', jwt);    
-        //window.location = '/api/order';                     
-    } catch (er) {
-        //NotificationManager.error("Invalid username or password");
+        window.location = '/home';                     
+    } catch (er) {       
         console.log("Error credentials", er);
+        setNotify({
+          isOpen: true,
+          message: 'Invalid username or password',
+          type: 'error'
+      })
     }
   }
 
@@ -141,6 +147,10 @@ export default function LogIn() {
         <Copyright />
       </Box>
     </Container>
+    <Notification 
+      notify={notify}
+      setNotify={setNotify}
+    />
    </FormControl>
   );
 }

@@ -34,7 +34,7 @@ const getAllOrders = asyncHandler(async(req, res) => {
 })
 
 //Get orders by customer id 
-const getOrders = asyncHandler(async(req, res) => {
+const getCustomerOrders = asyncHandler(async(req, res) => {
     const orders = await Order.find({from: req.params.id})
                               .populate('employer', 'name -_id')
                               .populate('employee', 'name -_id')
@@ -49,8 +49,24 @@ const getOrders = asyncHandler(async(req, res) => {
     }
 }) 
 
+//Get customer by user id 
+const getEmployeeOrders = asyncHandler(async(req, res) => {
+    const orders = await Order.find({ employee: req.params.id })
+                              .populate('employer', 'name -_id')
+                              .populate('employee', 'name -_id')
+                              .populate('from', 'firstName lastName -_id')
+                              .populate('to', 'name middleName -_id') 
+    if(orders) {
+        res.status(200).json(orders)
+    } else {
+        res.status(404)
+        throw new Error('No orders found for this employee')
+    }
+})
+
 export {
     createOrder,
     getAllOrders,
-    getOrders
+    getCustomerOrders,
+    getEmployeeOrders
 }

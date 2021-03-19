@@ -1,14 +1,16 @@
 import express from 'express';
 const router = express.Router();
 
-import { createOrder, getAllOrders, getOrders } from '../controllers/orderController.js'
+import { createOrder, getAllOrders, getCustomerOrders, getEmployeeOrders } from '../controllers/orderController.js'
 
 router.route('/')
       .post(createOrder);
 router.route('/')
       .get(getAllOrders);
-router.route('/:id')
-      .get(getOrders);
+router.route('/customer/:id')
+      .get(getCustomerOrders);
+router.route('/employee/:id')
+      .get(getEmployeeOrders);
 
 
 export default router;
