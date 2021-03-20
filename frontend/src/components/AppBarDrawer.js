@@ -12,7 +12,8 @@ import {
   IconButton,
   ListItem,
   ListItemIcon,
-  ListItemText
+  ListItemText,
+  Link
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
@@ -101,7 +102,13 @@ const useStyles = makeStyles((theme) => ({
   appBarImage: {
     maxHeight: '75px',
     paddingRight: '20px'       
-  }, */   
+  }, */  
+  logout: {
+      underline: 'none',
+      '&:hover': {
+        backgroundColor: 'ffff'
+      }
+  },
   }, 
 }));
 
@@ -203,11 +210,13 @@ export default function AppBarDrawer(props) {
           <ListItem button>
             <ListItemIcon><PaymentIcon /></ListItemIcon>
             <ListItemText>Salary</ListItemText>
-          </ListItem>
-          <ListItem button>
+          </ListItem> 
+          <Link href='/logout'>        
+          <ListItem button className={classes.logout}>          
             <ListItemIcon><ArrowBackIcon /></ListItemIcon>
-            <ListItemText>Logout</ListItemText>
-          </ListItem>
+            <ListItemText>Logout</ListItemText>          
+          </ListItem> 
+          </Link>         
           </List>
           </>
         }            
