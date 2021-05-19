@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import LogIn from './components/LogIn';
 import Logout from './components/Logout';
+import {Employee} from './components/Employee';
 import jwtDecode from 'jwt-decode';
 //import NavBar from './components/NavBar'; 
 import AppBarDrawer from './components/AppBarDrawer';
@@ -30,7 +31,8 @@ function App() {
             <AppBarDrawer user={ user } />
          } /> 
         <Route path='/logout' component={Logout} /> 
-        <Route path='/' component={LogIn} />                     
+        <Route path='/' component={LogIn} />  
+        <Route path='/employee' component={Employee}/>                   
       </Switch>
     </div>
     </BrowserRouter>
