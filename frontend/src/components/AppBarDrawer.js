@@ -195,6 +195,12 @@ export default function AppBarDrawer(props) {
           </ListItem>
           </List>
           <Divider />
+          <Link href='/employee'>        
+          <ListItem button >          
+            <ListItemIcon><PaymentIcon /></ListItemIcon>
+            <ListItemText>Employees</ListItemText>          
+          </ListItem> 
+          </Link> 
           <List>
           <ListItem button>
             <ListItemIcon><PaymentIcon /></ListItemIcon>
@@ -211,6 +217,7 @@ export default function AppBarDrawer(props) {
             <ListItemIcon><PaymentIcon /></ListItemIcon>
             <ListItemText>Salary</ListItemText>
           </ListItem> 
+                 
           <Link href='/logout'>        
           <ListItem button className={classes.logout}>          
             <ListItemIcon><ArrowBackIcon /></ListItemIcon>

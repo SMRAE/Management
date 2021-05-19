@@ -30,9 +30,10 @@ function App() {
         <Route path='/home' render={props =>
             <AppBarDrawer user={ user } />
          } /> 
+         <Route path='/employee' component={Employee}/> 
         <Route path='/logout' component={Logout} /> 
         <Route path='/' component={LogIn} />  
-        <Route path='/employee' component={Employee}/>                   
+                      
       </Switch>
     </div>
     </BrowserRouter>
