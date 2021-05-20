@@ -4,6 +4,7 @@ import {Table} from 'react-bootstrap';
 import {Button,ButtonToolbar} from 'react-bootstrap';
 import {AddDepModal} from './AddDepModal';
 import {EditDepModal} from './EditDepModal';
+import AppBarDrawer from './AppBarDrawer';
 
 
 export class Department extends Component{
@@ -45,6 +46,7 @@ export class Department extends Component{
         let editModalClose=()=>this.setState({editModalShow:false});
         return(
             <div>
+                <AppBarDrawer />
                 <Table className="mt-4" striped bordered hover size="sm">
                     <thead>
                         <tr>

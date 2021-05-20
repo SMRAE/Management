@@ -4,7 +4,7 @@ import {Table} from 'react-bootstrap';
 import {Button,ButtonToolbar} from 'react-bootstrap';
 import {AddEmpModal} from './AddEmpModal';
 import {EditEmpModal} from './EditEmpModal';
-
+import AppBarDrawer from './AppBarDrawer';
 export class Employee extends Component{
 
     constructor(props){
@@ -42,7 +42,8 @@ export class Employee extends Component{
         let addModalClose=()=>this.setState({addModalShow:false});
         let editModalClose=()=>this.setState({editModalShow:false});
         return(
-            <div >
+            <div>
+                <AppBarDrawer />
                 <Table className="mt-4" striped bordered hover size="sm">
                     <thead>
                         <tr>
