@@ -46,7 +46,7 @@ export class Employee extends Component{
                 <Table className="mt-4" striped bordered hover size="sm">
                     <thead>
                         <tr>
-                            <th>EmployeeId</th>
+                        <th>EmployeeId</th>
                         <th>EmployeeName</th>
                         <th>Department</th>
                         <th>DOJ</th>
