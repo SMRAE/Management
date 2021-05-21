@@ -1,4 +1,5 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import {
@@ -25,6 +26,7 @@ import PaymentIcon from '@material-ui/icons/Payment';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 import SettingsIcon from '@material-ui/icons/Settings';
+import { Navbar } from 'react-bootstrap';
 /* import DataTable from './DataTable';
 import AddIcon from '@material-ui/icons/Add';
 import { ColumnHeaderSortIcon } from '@material-ui/data-grid'; */
@@ -195,17 +197,16 @@ export default function AppBarDrawer(props) {
           </ListItem>
           </List>
           <Divider />
-          <Link href='/department'>        
           <ListItem button >          
             <ListItemIcon><PaymentIcon /></ListItemIcon>
-            <ListItemText>Departments</ListItemText>          
+            <ListItemText><NavLink to='/department'>Departments</NavLink></ListItemText>          
           </ListItem> 
-          </Link> <Link href='/employee'>        
+          <NavLink to='/employee'>        
           <ListItem button >          
             <ListItemIcon><PaymentIcon /></ListItemIcon>
-            <ListItemText>Employees</ListItemText>          
+            <ListItemText><NavLink to='/employee'>Employees</NavLink></ListItemText>          
           </ListItem> 
-          </Link> 
+          </NavLink>
           <List>
           <ListItem button>
             <ListItemIcon><PaymentIcon /></ListItemIcon>
