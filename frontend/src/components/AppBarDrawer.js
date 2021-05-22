@@ -200,13 +200,15 @@ export default function AppBarDrawer(props) {
           <ListItem button >          
             <ListItemIcon><PaymentIcon /></ListItemIcon>
             <ListItemText><NavLink to='/department'>Departments</NavLink></ListItemText>          
-          </ListItem> 
-          <NavLink to='/employee'>        
+          </ListItem>         
           <ListItem button >          
             <ListItemIcon><PaymentIcon /></ListItemIcon>
             <ListItemText><NavLink to='/employee'>Employees</NavLink></ListItemText>          
           </ListItem> 
-          </NavLink>
+          <ListItem button >          
+            <ListItemIcon><PaymentIcon /></ListItemIcon>
+            <ListItemText><NavLink to='/customer'>Customers</NavLink></ListItemText>          
+          </ListItem> 
           <List>
           <ListItem button>
             <ListItemIcon><PaymentIcon /></ListItemIcon>

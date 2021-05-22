@@ -5,6 +5,7 @@ import LogIn from './components/LogIn';
 import Logout from './components/Logout';
 import {Employee} from './components/Employee';
 import {Department} from './components/Department';
+import {Customer} from './components/Customer';
 
 import jwtDecode from 'jwt-decode';
 //import NavBar from './components/NavBar'; 
@@ -34,6 +35,7 @@ function App() {
          } /> 
           <Route path='/department' component={Department}/>
          <Route path='/employee' component={Employee}/> 
+         <Route path='/customer' component={Customer}/> 
         <Route path='/logout' component={Logout} /> 
         <Route path='/' component={LogIn} />  
                       
